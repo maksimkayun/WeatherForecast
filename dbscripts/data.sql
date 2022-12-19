@@ -17,5 +17,6 @@ CREATE TABLE IF NOT EXISTS `weather_forecasts` (
     `id` integer NOT NULL PRIMARY KEY,    
     `datetime` date DEFAULT NULL,    
     `temperature_c` integer DEFAULT NULL,
-    `summary` varchar(256) DEFAULT NULL
-    ) 
+    `summary` varchar(256) DEFAULT NULL,
+     PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
