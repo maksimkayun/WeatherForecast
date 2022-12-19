@@ -31,5 +31,13 @@ namespace ServiceWeather.Controllers
         {
             return _context.WeatherForecasts.ToList();
         }
+        
+        [HttpPost]
+        public IActionResult Add([FromBody] WeatherForecast weatherForecast)
+        {
+            _context.WeatherForecasts.Add(weatherForecast);
+            _context.SaveChanges();
+            return Ok(_context.SaveChanges());
+        }
     }
 }
