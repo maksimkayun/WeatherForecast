@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ServiceWeather.Context;
@@ -24,5 +25,10 @@ public static class ServiceExtensions
         {
 
         });
+    }
+    
+    public static void ConfigureMySqlContext(this IServiceCollection services, IConfiguration config) 
+    {
+        services.AddDbContext<WeatherContext>(o => o.UseInMemoryDatabase("weatherforecast"));
     }
 }

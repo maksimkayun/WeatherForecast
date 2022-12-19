@@ -31,10 +31,11 @@ namespace ServiceWeather
         {
             services.ConfigureCors();
             services.ConfigureIISIntegration();
+            services.ConfigureMySqlContext(Configuration);
             
-            var connectionString = Environment.GetEnvironmentVariable("connection", EnvironmentVariableTarget.Machine);
-            services.AddDbContextPool<WeatherContext>(opt =>
-                opt.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)) );
+            // var connectionString = Environment.GetEnvironmentVariable("connection", EnvironmentVariableTarget.Machine);
+            // services.AddDbContextPool<WeatherContext>(opt =>
+            //     opt.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)) );
             
             services.AddSwaggerGen(c =>
             {
