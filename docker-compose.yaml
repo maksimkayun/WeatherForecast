@@ -43,4 +43,4 @@ services:
 #    networks:
 #      - dockerapi-dev
 volumes:
-  dbscripts:
+  dbdata:
