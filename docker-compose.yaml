@@ -16,7 +16,7 @@ services:
 #      - 3600:3600
     volumes:
       - dbdata:/var/lib/mysql
-      - ./dbscripts/data.sql:/docker-entrypoint-initdb.d/data.sql
+      - ./dbscripts:/docker-entrypoint-initdb.d
     restart: always
   weatherforecastapp:
     depends_on:
