@@ -12,8 +12,8 @@ services:
       MYSQL_DATABASE: weatherforecast
       MYSQL_USER: dbuser
       MYSQL_PASSWORD: dbuserpassword
-    ports:
-      - 5432:5432
+#    ports:
+#      - 3600:3600
     volumes:
       - dbdata:/var/lib/mysql
       - ./dbscripts/data.sql:/docker-entrypoint-initdb.d/data.sql
