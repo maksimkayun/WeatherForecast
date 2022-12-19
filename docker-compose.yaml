@@ -25,7 +25,7 @@ services:
     environment:
       connection: "server=localhost;userid=dbuser;password=dbuserpassword;database=weatherforecast;"
     build:
-      context: .
+      context: ./ServiceWeather
     ports:
       - "8080:5000"
 #  postgres_image:
