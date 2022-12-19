@@ -1,4 +1,4 @@
-﻿FROM mcr.microsoft.com/dotnet/core/sdk:6.0 as build-image
+﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 as build-image
 
 WORKDIR /home/app
 
