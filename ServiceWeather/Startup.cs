@@ -33,7 +33,7 @@ namespace ServiceWeather
             var connectionString = Environment.GetEnvironmentVariable("connection", EnvironmentVariableTarget.Machine);
             services.AddDbContextPool<WeatherContext>(opt =>
                 opt.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)) );
-
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "ServiceWeather", Version = "v1"});
@@ -50,12 +50,12 @@ namespace ServiceWeather
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ServiceWeather v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthentication();
-            app.UseAuthorization();
+            // app.UseAuthentication();
+            // app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
