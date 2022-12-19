@@ -18,6 +18,6 @@ WORKDIR /publish
 
 COPY --from=build-image /publish .
 
-ENV ASPNETCORE_URLS="http://0.0.0.0:5000"
+ENV ASPNETCORE_URLS="http://localhost:5000"
 
 ENTRYPOINT ["dotnet", "ServiceWeather.dll"]
