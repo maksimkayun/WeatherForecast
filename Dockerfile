@@ -12,7 +12,7 @@ COPY . .
 
 RUN dotnet publish ./ServiceWeather/ServiceWeather.csproj -o /publish/
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 
 WORKDIR /publish
 
